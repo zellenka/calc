@@ -25,7 +25,7 @@
                         <label for="itemPrice">Цена одной еденицы (в Юанях):</label>
                     </div>
                     <div class="col-lg-4">
-                        <input type="number" name="Цена товара" id="itemPrice" v-on:input="Price">
+                        <input type="number" name="Цена товара" id="itemPrice" v-on:input="Price" placeholder="Цена">
                     </div>
                 </div>
                 <div class="row">
@@ -33,7 +33,7 @@
                         <label for="EMC">Доставка по Китаю (ЕМС в Юанях):</label>
                     </div>
                     <div class="col-lg-4">
-                        <input type="number" name="EMC" id="EMC" :value="EMS" v-on:input="Price">
+                        <input type="number" name="EMC" id="EMC" v-model.value="EMS" v-on:input="Price">
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-lg-4">
                         <button v-on:click="count += 1">+</button>
-                        <input type="number" name="Колличество" id="amount" :value="count" v-on:input="Price">
+                        <input type="number" name="Колличество" id="amount" v-model.value="count" v-on:input="Price">
                         <button v-on:click="count -= 1">-</button>
                     </div>
                 </div>
@@ -51,26 +51,45 @@
                         <label for="koef">Koeficient:</label>
                     </div>
                     <div class="col-lg-4">
-                        <input type="number" name="Koef" id="koef" :value="koef" v-on:input="Price">
+                        <input type="number" name="Koef" id="koef" v-model.value="koef" v-on:input="Price">
                     </div>
                 </div>
-                Всего: {{message}}
+                <div class="row">
+                        <div class="col-lg-4">
+                                <b>Всего:</b>
+                        </div>
+                         <div class="col-lg-4">
+                                {{messagePrice}}
+                         </div>
+                </div>
             </div>
 
             <div class="col-lg-12">
                 <h2>Вес</h2>
-                <div>
-                    <label for="itemweight">Ориентировочный вес товара: </label>
-                    <input type="number" name="Вес" id="itemweight" v-on:input="Weight">
+                <div class="row">
+                    <div class="col-lg-4">
+                            <label for="itemweight">Ориентировочный вес товара: </label>
+                    </div>
+                   <div class="col-lg-4">
+                        <input type="number" name="Вес" id="itemweight" v-on:input="Weight">
+                   </div>
                 </div>
 
-                Сума за вес: {{messageWeight}}
+                 
+                <div class="row">
+                        <div class="col-lg-4">
+                                <b>Сума за вес:</b>
+                        </div>
+                         <div class="col-lg-4">
+                                {{messageWeight}}
+                         </div>
+                </div>
 
             </div>
 
         </div>
-<div class="row">
-        <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
                 <div id="minfin-informer-m1Fn-converter"></div>
                 <script type="text/javascript">
                     var iframe = '<ifra' + 'me width="240" height="120" fram' +
@@ -84,7 +103,14 @@
                         border="0" />
                 </noscript>
             </div>
-</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                Если есть вопросы
+                <p>контакт 1</p>
+                <p>контакт 2</p>
+            </div>
+        </div>
     </div>
     </div>
 
