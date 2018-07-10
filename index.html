@@ -8,30 +8,86 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vue.js"></script>
-   
-</head>
-<body>
-    
-    <div id="app">
-        <h1>Калькулятор просчета стоимости товара и доставки</h1>
-        
 
-        <div class="calcBlock">
-                <div>
-                        <label for="itemPrice">Цена одной еденицы (в Юанях):</label> <input type="number" name="Цена товара" id="itemPrice" v-on:input="result">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="app">
+            <div class="col-lg-12">
+                <h1>Калькулятор просчета стоимости товара и доставки</h1>
+            </div>
+
+            <div class="col-lg-12">
+                <h2>Доставка</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="itemPrice">Цена одной еденицы (в Юанях):</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="number" name="Цена товара" id="itemPrice" v-on:input="Price">
+                    </div>
                 </div>
-                <div>
-                        <label for="EMC">Доставка по Китаю (ЕМС в Юанях):</label> <input type="number" name="EMC" id="EMC" value="10" v-on:input="result">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="EMC">Доставка по Китаю (ЕМС в Юанях):</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="number" name="EMC" id="EMC" :value="EMS" v-on:input="Price">
+                    </div>
                 </div>
-                <div>
-                        <label for="amount">Колличество:</label> <input type="number" name="Колличество" id="amount" value="1" v-on:input="result">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="amount">Колличество:</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <button v-on:click="count += 1">+</button>
+                        <input type="number" name="Колличество" id="amount" :value="count" v-on:input="Price">
+                        <button v-on:click="count -= 1">-</button>
+                    </div>
                 </div>
-                <div>
-                        <label for="koef">Koeficient:</label> <input type="number" name="Koef" id="koef" value="4.3" v-on:input="result">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="koef">Koeficient:</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="number" name="Koef" id="koef" :value="koef" v-on:input="Price">
+                    </div>
                 </div>
                 Всего: {{message}}
-              </div>
+            </div>
+
+            <div class="col-lg-12">
+                <h2>Вес</h2>
+                <div>
+                    <label for="itemweight">Ориентировочный вес товара: </label>
+                    <input type="number" name="Вес" id="itemweight" v-on:input="Weight">
+                </div>
+
+                Сума за вес: {{messageWeight}}
+
+            </div>
+
+        </div>
+<div class="row">
+        <div class="col-lg-12">
+                <div id="minfin-informer-m1Fn-converter"></div>
+                <script type="text/javascript">
+                    var iframe = '<ifra' + 'me width="240" height="120" fram' +
+                        'eborder="0" src="https://informer.minfin.com.ua/gen/converter/?color=white" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:240px;height:120px;ove' +
+                        'rflow:hidden;"></iframe>';
+                    var cl = 'minfin-informer-m1Fn-converter';
+                    document.getElementById(cl).innerHTML = iframe;
+                </script>
+                <noscript>
+                    <img src="https://informer.minfin.com.ua/gen/img.png" width="1" height="1" alt="minfin.com.ua: курсы валют" title="Курс валют"
+                        border="0" />
+                </noscript>
+            </div>
+</div>
     </div>
+    </div>
+
 
 
 </body>
