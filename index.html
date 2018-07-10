@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+   
+</head>
+<body>
+    
+    <div id="app">
+        <h1>Калькулятор просчета стоимости товара и доставки</h1>
+        
+
+        <div class="calcBlock">
+                <div>
+                        <label for="itemPrice">Цена одной еденицы (в Юанях):</label> <input type="number" name="Цена товара" id="itemPrice" v-on:input="result">
+                </div>
+                <div>
+                        <label for="EMC">Доставка по Китаю (ЕМС в Юанях):</label> <input type="number" name="EMC" id="EMC" value="10" v-on:input="result">
+                </div>
+                <div>
+                        <label for="amount">Колличество:</label> <input type="number" name="Колличество" id="amount" value="1" v-on:input="result">
+                </div>
+                <div>
+                        <label for="koef">Koeficient:</label> <input type="number" name="Koef" id="koef" value="4.3" v-on:input="result">
+                </div>
+                Всего: {{message}}
+              </div>
+    </div>
+
+
+</body>
+<script src="js/app.js"></script>
