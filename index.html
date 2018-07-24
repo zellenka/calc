@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Калькулятор просчета стоимости товара и доставки</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vue.js"></script>
@@ -41,9 +41,9 @@
                         <label for="amount">Колличество:</label>
                     </div>
                     <div class="col-lg-4">
-                        <button v-on:click="count += 1">+</button>
+                        
                         <input type="number" name="Колличество" id="amount" v-model.value="count" v-on:input="Price">
-                        <button v-on:click="count -= 1">-</button>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -58,13 +58,13 @@
                         <div class="col-lg-4">
                                 <b>Всего:</b>
                         </div>
-                         <div class="col-lg-4">
+                         <div class="col-lg-4 result">
                                 {{messagePrice}}
                          </div>
                 </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-12 weight">
                 <h2>Вес</h2>
                 <div class="row">
                     <div class="col-lg-4">
@@ -80,7 +80,7 @@
                         <div class="col-lg-4">
                                 <b>Сума за вес:</b>
                         </div>
-                         <div class="col-lg-4">
+                         <div class="col-lg-4 result">
                                 {{messageWeight}}
                          </div>
                 </div>
