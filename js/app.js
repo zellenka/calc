@@ -1,8 +1,8 @@
 let app = new Vue ({
     el: '#app',
     data: {
-        messagePrice: 'Запоните пустые поля',
-        messageWeight: 'Вес в грпммах, например 500',
+        messagePrice: 'Заполните пустые поля',
+        messageWeight: 'Вес в граммах, например 500',
         count: 1,
         EMS: 10,
         koef: '4.3'
